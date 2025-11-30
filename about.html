@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 我的个人作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#3182ce',
+                        accent: '#63b3ed',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary">
+                    <i class="fa fa-code mr-2"></i>我的作品集
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="font-medium text-gray-600 hover:text-secondary transition-colors">首页</a>
+                    <a href="about.html" class="font-medium text-primary hover:text-secondary transition-colors">关于我</a>
+                    <a href="skills.html" class="font-medium text-gray-600 hover:text-secondary transition-colors">爱好</a>
+                    <a href="projects.html" class="font-medium text-gray-600 hover:text-secondary transition-colors">日常</a>
+                    <a href="contact.html" class="font-medium text-gray-600 hover:text-secondary transition-colors">联系方式</a>
+                </div>
+                <button class="md:hidden text-gray-600 focus:outline-none" id="menu-toggle">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white shadow-lg absolute w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="index.html" class="font-medium text-gray-600 py-2 border-b border-gray-100 hover:text-secondary">首页</a>
+                <a href="about.html" class="font-medium text-primary py-2 border-b border-gray-100">关于我</a>
+                <a href="skills.html" class="font-medium text-gray-600 py-2 border-b border-gray-100 hover:text-secondary">爱好</a>
+                <a href="projects.html" class="font-medium text-gray-600 py-2 border-b border-gray-100 hover:text-secondary">日常</a>
+                <a href="contact.html" class="font-medium text-gray-600 py-2 hover:text-secondary">联系方式</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <header class="pt-24 pb-12 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold">关于我</h1>
+            <p class="mt-2 text-gray-200">了解我的something</p>
+        </div>
+    </header>
+
+    <!-- 关于我内容 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/3">
+                   
+                    
+                    <div class="mt-8 bg-gray-50 rounded-xl p-6 shadow-sm">
+                        <h3 class="text-xl font-bold mb-4 text-primary">基本信息</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fa fa-user-circle text-secondary mt-1 mr-3"></i>
+                                <span>王明峰</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-briefcase text-secondary mt-1 mr-3"></i>
+                                <span>大一学生</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-envelope text-secondary mt-1 mr-3"></i>
+                                <span>2177784277@qq.com</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-phone text-secondary mt-1 mr-3"></i>
+                                <span>156****2937</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-map-marker text-secondary mt-1 mr-3"></i>
+                                <span>武汉市洪山区</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3">
+                    <h2 class="text-2xl font-bold mb-6 text-primary">个人简介</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        我是一名华中科技大学的大一学生，拥有3年高中经验。我热爱干一些我想干的事，经历一些我想经历的东西。
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        对于本科四年的规划，我计划在大一完成英语的四级，努力学习计算机的基础课程，再大二大三踊跃参与一些竞赛，在大四争取一些实习机会，并为考研做准备。
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        未来，我希望能在一些大城市的高科技企业工作，取得一份不错的薪水，并成为一个能享受生活的人
+                    </p>
+                    
+                    <h2 class="text-2xl font-bold mb-6 mt-10 text-primary">经历</h2>
+                    <div class="space-y-8">
+                        <!-- 工作经历 1 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                                <i class="fa fa-briefcase text-2xl text-primary"></i>
+                            </div>
+                            <div class="ml-6">
+                                <h3 class="text-xl font-bold text-gray-800">初中</h3>
+                                <p class="text-secondary font-medium">2019年 | 2022年</p>
+                                <p class="mt-2 text-gray-600">
+                                    主要学习，有时看小说
+                                </p>
+                                <ul class="mt-3 text-gray-600 list-disc list-inside">
+                                    <li>疫情时期爽玩</li>
+                                    <li>初三化学开幕雷击</li>
+                                    <li>英语小学水平</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- 工作经历 2 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                                <i class="fa fa-briefcase text-2xl text-primary"></i>
+                            </div>
+                            <div class="ml-6">
+                                <h3 class="text-xl font-bold text-gray-800">高中</h3>
+                                <p class="text-secondary font-medium">2022年 | 2025年</p>
+                                <p class="mt-2 text-gray-600">
+                                    大部分时间启动原神，有时学习
+                                </p>
+                                <ul class="mt-3 text-gray-600 list-disc list-inside">
+                                    <li>沉迷原神无法自拔</li>
+                                    <li>我是胡桃和纳西妲的狗</li>
+                                    <li>英语初中水平</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold mb-6 mt-10 text-primary">教育背景</h2>
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                            <i class="fa fa-graduation-cap text-2xl text-primary"></i>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-bold text-gray-800">已获取高中文凭</h3>
+                            <p class="mt-2 text-gray-600">
+                                主修课程：语文，数学，英语，物理，化学，生物
+                            </p>
+                            <p class="mt-3 text-gray-600 font-medium">
+                                荣誉：无
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 兴趣爱好 -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">我的兴趣</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- 兴趣爱好 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-code text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800">吃</h3>
+                </div>
+                
+                <!-- 兴趣爱好 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-book text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800">喝</h3>
+                </div>
+                
+                <!-- 兴趣爱好 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-camera text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800">玩</h3>
+                </div>
+                
+                <!-- 兴趣爱好 4 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-bicycle text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800">乐</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">我的作品集</h3>
+                    <p class="text-gray-300">创造令人惊艳的数字体验</p>
+                </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 王明峰. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-3');
+            } else {
+                navbar.classList.add('py-3');
+                navbar.classList.remove('py-2');
+            }
+        });
+
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
