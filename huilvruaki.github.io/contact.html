@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系方式 - 我的个人作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#3182ce',
+                        accent: '#63b3ed',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .input-focus {
+                @apply focus:border-secondary focus:ring-2 focus:ring-secondary/20 focus:outline-none;
+            }
+            .btn-hover {
+                @apply hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-300;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+   <!-- 导航栏 -->
+    <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary">
+                    <i class="fa fa-code mr-2"></i>我的作品集
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="font-medium text-gray-600 hover:text-secondary transition-colors">首页</a>
+                    <a href="about.html" class="font-medium text-primary hover:text-secondary transition-colors">关于我</a>
+                    <a href="skills.html" class="font-medium text-gray-600 hover:text-secondary transition-colors">爱好</a>
+                    <a href="projects.html" class="font-medium text-gray-600 hover:text-secondary transition-colors">日常</a>
+                    <a href="contact.html" class="font-medium text-gray-600 hover:text-secondary transition-colors">联系方式</a>
+                </div>
+                <button class="md:hidden text-gray-600 focus:outline-none" id="menu-toggle">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white shadow-lg absolute w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="index.html" class="font-medium text-gray-600 py-2 border-b border-gray-100 hover:text-secondary">首页</a>
+                <a href="about.html" class="font-medium text-primary py-2 border-b border-gray-100">关于我</a>
+                <a href="skills.html" class="font-medium text-gray-600 py-2 border-b border-gray-100 hover:text-secondary">爱好</a>
+                <a href="projects.html" class="font-medium text-gray-600 py-2 border-b border-gray-100 hover:text-secondary">日常</a>
+                <a href="contact.html" class="font-medium text-gray-600 py-2 hover:text-secondary">联系方式</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <header class="pt-24 pb-12 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold">联系方式</h1>
+        </div>
+    </header>
+
+    <!-- 核心联系内容 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                <!-- 联系表单（占3列） -->
+                <div class="lg:col-span-3 bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <h2 class="text-2xl font-bold mb-6 text-primary">发送消息</h2>
+                    <form id="contact-form">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">姓名</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus" placeholder="请输入您的姓名" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">邮箱</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus" placeholder="请输入您的邮箱" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">主题</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus" placeholder="请输入消息主题" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">消息内容</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus" placeholder="请输入您的消息内容" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary text-white font-medium py-3 px-6 rounded-lg btn-hover">
+                            发送消息 <i class="fa fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                    <!-- 表单提交成功提示 -->
+                    <div id="success-message" class="hidden mt-6 text-green-500 text-center py-3 px-4 bg-green-50 rounded-lg">
+                        <i class="fa fa-check-circle mr-2"></i> 消息发送成功！我会尽快回复您。
+                    </div>
+                </div>
+                
+                <!-- 快捷联系信息（占2列） -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- 直接联系卡片 -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                        <h2 class="text-2xl font-bold mb-6 text-primary">直接联系</h2>
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <i class="fa fa-envelope text-xl text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-gray-800">邮箱</h3>
+                                    <a href="mailto:zhangsan@example.com" class="text-gray-600 hover:text-secondary transition-colors">2177784277@qq.com</a>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <i class="fa fa-phone text-xl text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-gray-800">电话</h3>
+                                    <a href="tel:13512345678" class="text-gray-600 hover:text-secondary transition-colors">156****2937</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 提示卡片 -->
+               
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">我的作品集</h3>
+                    <p class="text-gray-300">创造令人惊艳的数字体验</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-white hover:text-accent transition-colors">
+                        <i class="fa fa-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-accent transition-colors">
+                        <i class="fa fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-accent transition-colors">
+                        <i class="fa fa-twitter text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+       
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-3');
+            } else {
+                navbar.classList.add('py-3');
+                navbar.classList.remove('py-2');
+            }
+        });
+
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 表单提交处理
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 模拟表单提交
+            document.getElementById('contact-form').reset();
+            document.getElementById('success-message').classList.remove('hidden');
+            
+            // 5秒后隐藏成功提示
+            setTimeout(function() {
+                document.getElementById('success-message').classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
